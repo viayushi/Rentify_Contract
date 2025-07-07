@@ -6,15 +6,6 @@ Built with **Node.js/Express/MongoDB** (backend) and **React/Vite** (frontend), 
 
 ---
 
-
-## 🎥 Rentify Live Demo
-
-<video width="100%" controls autoplay muted loop>
-  <source src="https://raw.githubusercontent.com/viayushi/Rentify_Contract/main/RentifyContractDemo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-
 ## ✨ Features
 
 ### 🏘️ Property & Contract Management
