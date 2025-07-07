@@ -8,7 +8,7 @@ Built with **Node.js/Express/MongoDB** (backend) and **React/Vite** (frontend), 
 
 ## 🎥 Rentify Live Demo
 
-[![Watch the demo](https://img.youtube.com/vi/fypq5VbF-oA/hqdefault.jpg)](https://youtu.be/fypq5VbF-oA)
+[![Watch the demo](https://img.youtube.com/vi/UgNAn2vxAHA/hqdefault.jpg)](https://youtu.be/UgNAn2vxAHA)
 
 ## 📄 Sample Contract PDF
 
