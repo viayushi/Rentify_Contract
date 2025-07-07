@@ -10,6 +10,10 @@ Built with **Node.js/Express/MongoDB** (backend) and **React/Vite** (frontend), 
 
 [![Watch the demo](https://img.youtube.com/vi/fypq5VbF-oA/hqdefault.jpg)](https://youtu.be/fypq5VbF-oA)
 
+## 📄 Sample Contract PDF
+
+[📥 View Contract](https://github.com/viayushi/Rentify_Contract/raw/main/Rental_Contract_RENT-1751909958665-8680%20%281%29.pdf)
+
 
 ## ✨ Features
 
