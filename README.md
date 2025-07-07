@@ -6,6 +6,12 @@ Built with **Node.js/Express/MongoDB** (backend) and **React/Vite** (frontend), 
 
 ---
 
+<video width="100%" controls autoplay muted loop>
+  <source src="./public/RectifyContractDemo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
 ## ✨ Features
 
 ### 🏘️ Property & Contract Management
@@ -53,6 +59,8 @@ Built with **Node.js/Express/MongoDB** (backend) and **React/Vite** (frontend), 
 - Socket.IO-client  
 
 ---
+
+<video src=
 
 ## 🚀 Getting Started
 
