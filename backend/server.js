@@ -1,119 +1,151 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const helmet = require('helmet');
-const morgan = require('morgan');
-const rateLimit = require('express-rate-limit');
 const http = require('http');
-const socketIo = require('socket.io');
+const mongoose = require('mongoose');
+const app = require('./app');
+const { Server } = require('socket.io');
 require('dotenv').config();
+const Chat = require('./models/Chat');
+const User = require('./models/User');
+const contractApproval = require('./controllers/contract/contractApproval');
+const contractSignature = require('./controllers/contract/contractSignature');
+const Contract = require('./models/Contract');
+const jwt = require('jsonwebtoken');
 
-const authRoutes = require('./routes/auth');
-const propertyRoutes = require('./routes/properties');
-const messageRoutes = require('./routes/messages');
-const orderRoutes = require('./routes/orders');
-const agreementRoutes = require('./routes/agreements');
-const paymentRoutes = require('./routes/payments');
+const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/rentify';
+const JWT_SECRET = process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-this-in-production';
 
-const app = express();
 const server = http.createServer(app);
-const io = socketIo(server, {
+const io = new Server(server, {
   cors: {
-    origin: [/^http:\/\/localhost:\d+$/], // Always allow any localhost port
-    methods: ["GET", "POST"]
+    origin: '*', 
+    methods: ['GET', 'POST']
   }
 });
 
-// Rate limiting
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // limit each IP to 100 requests per windowMs
-});
-
-// Middleware
-app.use(helmet());
-app.use(morgan('combined'));
-app.use(limiter);
-app.use(cors({
-  origin: [/^http:\/\/localhost:\d+$/], // Always allow any localhost port
-  credentials: true
-}));
-app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ extended: true, limit: '10mb' }));
-
-// Database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/property-listing', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('Connected to MongoDB'))
-.catch(err => console.error('MongoDB connection error:', err));
-
-// Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/properties', propertyRoutes);
-app.use('/api/messages', messageRoutes);
-app.use('/api/orders', orderRoutes);
-app.use('/api/agreements', agreementRoutes);
-app.use('/api/payments', paymentRoutes);
-
-// Socket.IO connection handling
-const connectedUsers = new Map();
+// Socket.IO user management
+const onlineUsers = new Map(); // userId -> socketId
 
 io.on('connection', (socket) => {
-  console.log('User connected:', socket.id);
+  console.log('New socket connection:', socket.id);
 
-  socket.on('join', (userId) => {
-    connectedUsers.set(userId, socket.id);
-    socket.userId = userId;
-    console.log(`User ${userId} joined`);
+  socket.on('register', (userId) => {
+    console.log('User registered:', userId, 'with socket:', socket.id);
+    onlineUsers.set(userId, socket.id);
+    socket.join(userId); //joining a room for direct messaging
   });
 
-  socket.on('send_message', async (data) => {
+  socket.on('send_message', async ({ from, to, propertyId, message }) => {
     try {
-      const Message = require('./models/Message');
-      const newMessage = new Message({
-        propertyId: data.propertyId,
-        buyerId: data.buyerId,
-        sellerId: data.sellerId,
-        messages: [{
-          senderId: data.senderId,
-          content: data.content,
-          timestamp: new Date()
-        }]
+      console.log('Received message:', { from, to, propertyId, message });
+      
+      //finding the chat between these users for this property
+      let chat = await Chat.findOne({ 
+        property: propertyId, 
+        participants: { $all: [from, to], $size: 2 } 
       });
-      await newMessage.save();
-
-      // Emit to recipient
-      const recipientSocketId = connectedUsers.get(data.recipientId);
-      if (recipientSocketId) {
-        io.to(recipientSocketId).emit('new_message', {
-          propertyId: data.propertyId,
-          senderId: data.senderId,
-          content: data.content,
-          timestamp: new Date()
+      
+      if (!chat) {
+        chat = new Chat({ 
+          property: propertyId, 
+          participants: [from, to], 
+          messages: [] 
         });
+        await chat.save();
+        console.log('Created new chat:', chat._id);
       }
-    } catch (error) {
-      console.error('Error sending message:', error);
+      const msgObj = { 
+        sender: from, 
+        text: message, 
+        timestamp: new Date() 
+      };
+      chat.messages.push(msgObj);
+      await chat.save();
+      await chat.populate({ path: 'messages.sender', select: 'name profileImage' });
+      const lastMsg = chat.messages[chat.messages.length - 1];
+      
+      console.log('Sending message to users:', { to, from });
+      
+      //emit to recipient and sender
+      io.to(to).emit('receive_message', lastMsg);
+      io.to(from).emit('receive_message', lastMsg);
+      
+      //emit to all participants in the chat room
+      const chatRoom = `chat_${propertyId}_${from}_${to}`;
+      io.to(chatRoom).emit('receive_message', lastMsg);
+      
+    } catch (err) {
+      console.error('Socket send_message error:', err);
+      socket.emit('message_error', { error: 'Failed to send message' });
+    }
+  });
+
+  //Join chat room for specific property and users
+  socket.on('join_chat', ({ propertyId, userId1, userId2 }) => {
+    const chatRoom = `chat_${propertyId}_${userId1}_${userId2}`;
+    socket.join(chatRoom);
+    console.log('Joined chat room:', chatRoom);
+  });
+
+  socket.on('contractAction', async (data) => {
+    try {
+      const { action, contractId, userId, signatureText, signatureImage, useStoredSignature } = data;
+      const contract = await Contract.findOne({ contractId });
+      if (!contract) {
+        socket.emit('contractUpdate', { contractId, error: 'Contract not found' });
+        return;
+      }
+      const req = {
+        params: { contractId },
+        user: { _id: userId, name: data.userName || '' },
+        body: { signatureText, signatureImage, useStoredSignature },
+        ip: socket.handshake.address,
+        app: app
+      };
+      const res = {
+        status: (code) => ({ json: (obj) => socket.emit('contractUpdate', { contractId, error: obj.message }) }),
+        json: (obj) => {
+          const updatedContract = obj.contract || contract;
+          io.to(String(updatedContract.landlordId)).emit('contractUpdate', { contractId, contract: updatedContract });
+          io.to(String(updatedContract.tenantId)).emit('contractUpdate', { contractId, contract: updatedContract });
+        }
+      };
+      if (action === 'approve') {
+        await contractApproval.approveContract(req, res);
+      } else if (action === 'reject') {
+        await contractApproval.rejectContract(req, res);
+      } else if (action === 'sign') {
+        await contractSignature.signContract(req, res);
+      }
+    } catch (err) {
+      socket.emit('contractUpdate', { contractId: data.contractId, error: err.message });
     }
   });
 
   socket.on('disconnect', () => {
-    if (socket.userId) {
-      connectedUsers.delete(socket.userId);
-      console.log(`User ${socket.userId} disconnected`);
+    console.log('Socket disconnected:', socket.id);
+    // Remove user from online map
+    for (const [userId, sockId] of onlineUsers.entries()) {
+      if (sockId === socket.id) {
+        onlineUsers.delete(userId);
+        console.log('User removed from online map:', userId);
+        break;
+      }
     }
   });
 });
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ message: 'Something went wrong!' });
-});
+app.set('io', io);
 
-const PORT = process.env.PORT || 5001;
-server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-}); 
+mongoose.connect(MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => {
+    console.log('MongoDB connected');
+    server.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error('MongoDB connection error:', err);
+  }); 

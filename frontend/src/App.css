@@ -1,8 +1,8 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
 .logo {
@@ -39,4 +39,109 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Chat message bubbles */
+.message-bubble {
+  max-width: 60%;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 12px;
+  background: #e6ffe6;
+  position: relative;
+  word-break: break-word;
+}
+.sent {
+  background: #d1ffd6;
+  margin-left: auto;
+  text-align: right;
+}
+.received {
+  background: #f0f0f0;
+  margin-right: auto;
+  text-align: left;
+}
+.sending-indicator {
+  font-style: italic;
+  color: #888;
+  margin-left: 8px;
+}
+
+/* Notification badge (for Navbar) */
+.badge {
+  background: #e53e3e;
+  color: #fff;
+  border-radius: 9999px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  z-index: 10;
+}
+
+/* Property card styling */
+.property-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.property-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Animation utilities */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .property-card {
+    margin-bottom: 1rem;
+  }
+  
+  .search-filters {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

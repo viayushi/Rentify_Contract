@@ -1,0 +1,885 @@
+[
+  {
+    "id": 1,
+    "title": "Modern 2BHK Apartment in Bandra West",
+    "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80",
+    "location": "Mumbai, Maharashtra",
+    "price": 65000,
+    "type": "Apartment",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area": 1200,
+    "description": "Luxurious 2BHK apartment in the heart of Bandra West with premium amenities and excellent connectivity to shopping, restaurants, and transportation.",
+    "details": {
+      "address": "Flat 15A, Sunshine Towers, Carter Road, Bandra West, Mumbai, Maharashtra, 400050",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Swimming Pool",
+        "Gym",
+        "24x7 Security",
+        "Power Backup",
+        "Lift",
+        "Garden"
+      ],
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0e1",
+      "name": "Rahul Sharma",
+      "email": "rahul.sharma@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Rahul+Sharma&background=3c7655&color=fff"
+    },
+    "rating": 4.5,
+    "reviews": 12
+  },
+  {
+    "id": 2,
+    "title": "Luxury Villa in Whitefield",
+    "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80",
+    "location": "Bangalore, Karnataka",
+    "price": 180000,
+    "type": "Villa",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "area": 3800,
+    "description": "Exclusive villa with private garden, swimming pool, and modern amenities in the prestigious Whitefield area of Bangalore.",
+    "details": {
+      "address": "Villa 8, Green Acres, Whitefield Main Road, Bangalore, Karnataka, 560066",
+      "amenities": [
+        "Private Garden",
+        "Swimming Pool",
+        "Parking",
+        "CCTV",
+        "Clubhouse",
+        "Gym",
+        "Children's Play Area"
+      ],
+      "furnishing": "Semi Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0e2",
+      "name": "Priya Patel",
+      "email": "priya.patel@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Priya+Patel&background=3c7655&color=fff"
+    },
+    "rating": 4.8,
+    "reviews": 8
+  },
+  {
+    "id": 3,
+    "title": "Cozy Studio in Hinjewadi",
+    "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80",
+    "location": "Pune, Maharashtra",
+    "price": 28000,
+    "type": "Studio",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area": 450,
+    "description": "Perfect studio apartment for IT professionals, located close to major tech parks with all essential amenities.",
+    "details": {
+      "address": "Studio 205, Tech Park Residency, Hinjewadi Phase 1, Pune, Maharashtra, 411057",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Lift",
+        "Power Backup",
+        "24x7 Security"
+      ],
+      "furnishing": "Unfurnished",
+      "petPolicy": "No Pets"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0e3",
+      "name": "Arjun Singh",
+      "email": "arjun.singh@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Arjun+Singh&background=3c7655&color=fff"
+    },
+    "rating": 4.2,
+    "reviews": 15
+  },
+  {
+    "id": 4,
+    "title": "Premium 3BHK in Gachibowli",
+    "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80",
+    "location": "Hyderabad, Telangana",
+    "price": 55000,
+    "type": "Apartment",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "area": 1600,
+    "description": "Spacious 3BHK apartment with modern interiors, located in the IT hub of Hyderabad with excellent connectivity.",
+    "details": {
+      "address": "Flat 12C, Lakeview Residency, Gachibowli, Hyderabad, Telangana, 500032",
+      "amenities": [
+        "Gym",
+        "Children's Play Area",
+        "Parking",
+        "24x7 Security",
+        "Swimming Pool",
+        "Garden"
+      ],
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0e4",
+      "name": "Meera Reddy",
+      "email": "meera.reddy@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Meera+Reddy&background=3c7655&color=fff"
+    },
+    "rating": 4.7,
+    "reviews": 6
+  },
+  {
+    "id": 5,
+    "title": "Ultra-Luxury Penthouse in DLF Phase 5",
+    "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80",
+    "location": "Gurgaon, Haryana",
+    "price": 350000,
+    "type": "Penthouse",
+    "bedrooms": 5,
+    "bathrooms": 5,
+    "area": 5500,
+    "description": "Breathtaking penthouse with panoramic city views, private terrace, and world-class amenities in the heart of Gurgaon.",
+    "details": {
+      "address": "Penthouse 25, Sky High Towers, DLF Phase 5, Gurgaon, Haryana, 122002",
+      "amenities": [
+        "Infinity Pool",
+        "Private Elevator",
+        "Home Theater",
+        "Gym",
+        "Concierge Service",
+        "Private Garden",
+        "Wine Cellar"
+      ],
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0e5",
+      "name": "Vikram Malhotra",
+      "email": "vikram.malhotra@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Vikram+Malhotra&background=3c7655&color=fff"
+    },
+    "rating": 4.9,
+    "reviews": 3
+  },
+  {
+    "id": 6,
+    "title": "Heritage House in Civil Lines",
+    "image": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80",
+    "location": "Jaipur, Rajasthan",
+    "price": 45000,
+    "type": "House",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "area": 1800,
+    "description": "Beautiful heritage house with traditional Rajasthani architecture, located in the prestigious Civil Lines area.",
+    "details": {
+      "address": "House 7, Heritage Lane, Civil Lines, Jaipur, Rajasthan, 302001",
+      "amenities": [
+        "Private Garden",
+        "Parking",
+        "24x7 Security",
+        "Servant Quarters",
+        "Traditional Courtyard"
+      ],
+      "furnishing": "Semi Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0e6",
+      "name": "Rajesh Kumar",
+      "email": "rajesh.kumar@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Rajesh+Kumar&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Modern Studio in Connaught Place",
+    "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80",
+    "location": "Delhi, Delhi",
+    "price": 32000,
+    "type": "Studio",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area": 500,
+    "description": "Contemporary studio apartment in the heart of Delhi, perfect for young professionals with modern amenities.",
+    "details": {
+      "address": "Studio 8, Red Brick Building, Connaught Place, Delhi, Delhi, 110001",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Lift",
+        "Power Backup",
+        "24x7 Security"
+      ],
+      "furnishing": "Unfurnished",
+      "petPolicy": "No Pets"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0e7",
+      "name": "Anjali Gupta",
+      "email": "anjali.gupta@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Anjali+Gupta&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 8,
+    "title": "Spacious Row House in Satellite",
+    "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80",
+    "location": "Ahmedabad, Gujarat",
+    "price": 48000,
+    "type": "Row House",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "area": 2000,
+    "description": "Well-maintained row house in a gated community with excellent facilities and family-friendly environment.",
+    "details": {
+      "address": "Row House 15, Green Meadows, Satellite, Ahmedabad, Gujarat, 380015",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Swimming Pool",
+        "Gym",
+        "24x7 Security",
+        "Power Backup",
+        "Garden"
+      ],
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0e8",
+      "name": "Suresh Patel",
+      "email": "suresh.patel@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Suresh+Patel&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 9,
+    "title": "Bright 2BHK in Sector 17",
+    "image": "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=600&q=80",
+    "location": "Chandigarh, Chandigarh",
+    "price": 42000,
+    "type": "Apartment",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area": 1100,
+    "description": "Bright and airy flat in a prime sector of Chandigarh with excellent ventilation and modern amenities.",
+    "details": {
+      "address": "Flat 8B, Sunflower Apartments, Sector 17, Chandigarh, Chandigarh, 160017",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Swimming Pool",
+        "Gym",
+        "24x7 Security",
+        "Power Backup",
+        "Garden"
+      ],
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0e9",
+      "name": "Harpreet Kaur",
+      "email": "harpreet.kaur@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Harpreet+Kaur&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 10,
+    "title": "Elegant Bungalow in Gomti Nagar",
+    "image": "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=600&q=80",
+    "location": "Lucknow, Uttar Pradesh",
+    "price": 120000,
+    "type": "Bungalow",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "area": 4000,
+    "description": "Spacious bungalow with landscaped garden and ample parking in the posh Gomti Nagar area of Lucknow.",
+    "details": {
+      "address": "Bungalow 22, Lotus Lane, Gomti Nagar, Lucknow, Uttar Pradesh, 226010",
+      "amenities": [
+        "Private Garden",
+        "Parking",
+        "Swimming Pool",
+        "Servant Quarters",
+        "24x7 Security",
+        "Power Backup"
+      ],
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0ea",
+      "name": "Amit Verma",
+      "email": "amit.verma@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Amit+Verma&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 11,
+    "title": "Affordable 1BHK in Vijay Nagar",
+    "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80",
+    "location": "Indore, Madhya Pradesh",
+    "price": 22000,
+    "type": "Apartment",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area": 650,
+    "description": "Affordable 1BHK in a well-connected Indore locality with all essential amenities and good connectivity.",
+    "details": {
+      "address": "Apt 305, Blue Sky Residency, Vijay Nagar, Indore, Madhya Pradesh, 452010",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Lift",
+        "Power Backup",
+        "24x7 Security"
+      ],
+      "furnishing": "Unfurnished",
+      "petPolicy": "No Pets"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0eb",
+      "name": "Neha Sharma",
+      "email": "neha.sharma@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Neha+Sharma&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 12,
+    "title": "Sea View Apartment in Fort Kochi",
+    "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80",
+    "location": "Kochi, Kerala",
+    "price": 38000,
+    "type": "Apartment",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area": 1000,
+    "description": "Modern apartment with stunning sea view and all amenities in the historic Fort Kochi area.",
+    "details": {
+      "address": "Flat 12A, Sea View Apartments, Fort Kochi, Kochi, Kerala, 682001",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Swimming Pool",
+        "Gym",
+        "24x7 Security",
+        "Power Backup",
+        "Sea View Balcony"
+      ],
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0ec",
+      "name": "Thomas Mathew",
+      "email": "thomas.mathew@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Thomas+Mathew&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 13,
+    "title": "Family House in Arera Colony",
+    "image": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80",
+    "location": "Bhopal, Madhya Pradesh",
+    "price": 42000,
+    "type": "House",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "area": 1600,
+    "description": "Spacious family house in a safe and quiet Bhopal neighborhood with excellent facilities.",
+    "details": {
+      "address": "House 45, Green Meadows, Arera Colony, Bhopal, Madhya Pradesh, 462016",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Swimming Pool",
+        "Gym",
+        "24x7 Security",
+        "Power Backup",
+        "Garden"
+      ],
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0ed",
+      "name": "Ravi Shukla",
+      "email": "ravi.shukla@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Ravi+Shukla&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 14,
+    "title": "Beachside Villa in Calangute",
+    "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80",
+    "location": "Goa, Goa",
+    "price": 250000,
+    "type": "Villa",
+    "bedrooms": 5,
+    "bathrooms": 5,
+    "area": 4500,
+    "description": "Beachside luxury villa with private pool, garden, and stunning ocean views in the popular Calangute area.",
+    "details": {
+      "address": "Villa 12, Beach Road, Calangute, Goa, Goa, 403516",
+      "amenities": [
+        "Private Pool",
+        "Beach Access",
+        "Parking",
+        "CCTV",
+        "Garden",
+        "BBQ Area",
+        "24x7 Security"
+      ],
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0ee",
+      "name": "Maria Fernandes",
+      "email": "maria.fernandes@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Maria+Fernandes&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 15,
+    "title": "Modern Flat in Vesu",
+    "image": "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=600&q=80",
+    "location": "Surat, Gujarat",
+    "price": 32000,
+    "type": "Apartment",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area": 950,
+    "description": "Well-ventilated flat in a secure Surat society with modern amenities and excellent connectivity.",
+    "details": {
+      "address": "Flat 8C, Green Meadows, Vesu, Surat, Gujarat, 395007",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Lift",
+        "Power Backup",
+        "24x7 Security",
+        "Garden"
+      ],
+      "furnishing": "Unfurnished",
+      "petPolicy": "No Pets"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0ef",
+      "name": "Ketan Shah",
+      "email": "ketan.shah@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Ketan+Shah&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 16,
+    "title": "Premium 3BHK in Sector 62",
+    "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80",
+    "location": "Noida, Uttar Pradesh",
+    "price": 58000,
+    "type": "Apartment",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "area": 1400,
+    "description": "Modern apartment with clubhouse and gym facilities in the well-planned Sector 62 of Noida.",
+    "details": {
+      "address": "Flat 15B, Sky View Apartments, Sector 62, Noida, Uttar Pradesh, 201309",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Swimming Pool",
+        "Gym",
+        "24x7 Security",
+        "Power Backup",
+        "Clubhouse"
+      ],
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0f0",
+      "name": "Deepak Agarwal",
+      "email": "deepak.agarwal@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Deepak+Agarwal&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 17,
+    "title": "Peaceful Studio in Hebbal",
+    "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80",
+    "location": "Mysore, Karnataka",
+    "price": 18000,
+    "type": "Studio",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area": 400,
+    "description": "Affordable studio in a peaceful Mysore locality with all essential amenities and good connectivity.",
+    "details": {
+      "address": "Studio 5, Green Meadows, Hebbal, Mysore, Karnataka, 570016",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Lift",
+        "Power Backup",
+        "24x7 Security"
+      ],
+      "furnishing": "Unfurnished",
+      "petPolicy": "No Pets"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0f1",
+      "name": "Lakshmi Devi",
+      "email": "lakshmi.devi@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Lakshmi+Devi&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 18,
+    "title": "Elegant Villa in Sector 7",
+    "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80",
+    "location": "Chandigarh, Chandigarh",
+    "price": 200000,
+    "type": "Villa",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "area": 4000,
+    "description": "Elegant villa with landscaped garden and modern amenities in the prestigious Sector 7 of Chandigarh.",
+    "details": {
+      "address": "Villa 18, Green Meadows, Sector 7, Chandigarh, Chandigarh, 160019",
+      "amenities": [
+        "Private Garden",
+        "Parking",
+        "Swimming Pool",
+        "Gym",
+        "24x7 Security",
+        "Power Backup",
+        "Servant Quarters"
+      ],
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0f2",
+      "name": "Gurpreet Singh",
+      "email": "gurpreet.singh@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Gurpreet+Singh&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 19,
+    "title": "Budget-Friendly 2BHK in Kakadeo",
+    "image": "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=600&q=80",
+    "location": "Kanpur, Uttar Pradesh",
+    "price": 25000,
+    "type": "Apartment",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "area": 900,
+    "description": "Budget-friendly flat in a central Kanpur location with good connectivity and essential amenities.",
+    "details": {
+      "address": "Flat 12B, Blue Sky Residency, Kakadeo, Kanpur, Uttar Pradesh, 208025",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Lift",
+        "Power Backup",
+        "24x7 Security"
+      ],
+      "furnishing": "Unfurnished",
+      "petPolicy": "No Pets"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0f3",
+      "name": "Vishal Tiwari",
+      "email": "vishal.tiwari@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Vishal+Tiwari&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 20,
+    "title": "Family House in Bailey Road",
+    "image": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80",
+    "location": "Patna, Bihar",
+    "price": 35000,
+    "type": "House",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "area": 1400,
+    "description": "Family house in a safe and quiet Patna neighborhood with excellent facilities and good connectivity.",
+    "details": {
+      "address": "House 25, Green Meadows, Bailey Road, Patna, Bihar, 800014",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Swimming Pool",
+        "Gym",
+        "24x7 Security",
+        "Power Backup",
+        "Garden"
+      ],
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0f4",
+      "name": "Rajiv Kumar",
+      "email": "rajiv.kumar@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Rajiv+Kumar&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 21,
+    "title": "Modern 2BHK in Technopark",
+    "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80",
+    "location": "Thiruvananthapuram, Kerala",
+    "price": 35000,
+    "type": "Apartment",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area": 1000,
+    "description": "Modern apartment in the heart of Thiruvananthapuram, close to Technopark and major attractions.",
+    "details": {
+      "address": "Flat 8A, Sea View Apartments, Technopark, Thiruvananthapuram, Kerala, 695581",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Swimming Pool",
+        "Gym",
+        "24x7 Security",
+        "Power Backup",
+        "Garden"
+      ],
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0f5",
+      "name": "Sreekumar Nair",
+      "email": "sreekumar.nair@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Sreekumar+Nair&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 22,
+    "title": "Exclusive Penthouse in Koregaon Park",
+    "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80",
+    "location": "Pune, Maharashtra",
+    "price": 280000,
+    "type": "Penthouse",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "area": 4500,
+    "description": "Exclusive penthouse with private terrace and city views in the prestigious Koregaon Park area of Pune.",
+    "details": {
+      "address": "Penthouse 15, Sky High Towers, Koregaon Park, Pune, Maharashtra, 411001",
+      "amenities": [
+        "Infinity Pool",
+        "Private Elevator",
+        "Home Theater",
+        "Gym",
+        "Concierge Service",
+        "Private Terrace",
+        "Wine Cellar"
+      ],
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0f6",
+      "name": "Aditya Joshi",
+      "email": "aditya.joshi@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Aditya+Joshi&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 23,
+    "title": "Comfortable 2BHK in Dharampeth",
+    "image": "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=600&q=80",
+    "location": "Nagpur, Maharashtra",
+    "price": 28000,
+    "type": "Apartment",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area": 950,
+    "description": "Comfortable flat in a well-connected Nagpur area with modern amenities and good connectivity.",
+    "details": {
+      "address": "Flat 6C, Green Meadows, Dharampeth, Nagpur, Maharashtra, 440010",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Lift",
+        "Power Backup",
+        "24x7 Security",
+        "Garden"
+      ],
+      "furnishing": "Unfurnished",
+      "petPolicy": "No Pets"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0f7",
+      "name": "Prakash Deshmukh",
+      "email": "prakash.deshmukh@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Prakash+Deshmukh&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 24,
+    "title": "Beautiful Villa in Peelamedu",
+    "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80",
+    "location": "Coimbatore, Tamil Nadu",
+    "price": 120000,
+    "type": "Villa",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "area": 2400,
+    "description": "Beautiful villa with garden and parking in the peaceful Peelamedu area of Coimbatore.",
+    "details": {
+      "address": "Villa 9, Green Meadows, Peelamedu, Coimbatore, Tamil Nadu, 641004",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Swimming Pool",
+        "Gym",
+        "24x7 Security",
+        "Power Backup",
+        "Garden"
+      ],
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0f8",
+      "name": "Karthik Rajan",
+      "email": "karthik.rajan@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Karthik+Rajan&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": 25,
+    "title": "Compact Studio in Park Street",
+    "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80",
+    "location": "Kolkata, West Bengal",
+    "price": 22000,
+    "type": "Studio",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "area": 450,
+    "description": "Compact studio in a central Kolkata location, ideal for students or working professionals.",
+    "details": {
+      "address": "Studio 3, Red Brick Building, Park Street, Kolkata, West Bengal, 700016",
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Lift",
+        "Power Backup",
+        "24x7 Security"
+      ],
+      "furnishing": "Unfurnished",
+      "petPolicy": "No Pets"
+    },
+    "owner": {
+      "id": "65a8b2c3d4e5f6a7b8c9d0f9",
+      "name": "Soumitra Chatterjee",
+      "email": "soumitra.chatterjee@email.com",
+      "profileImage": "https://ui-avatars.com/api/?name=Soumitra+Chatterjee&background=3c7655&color=fff"
+    }
+  },
+  {
+    "id": "1751898177628",
+    "title": "Beautifull Sea Facing Apartment ",
+    "description": "ZUMI\"S property",
+    "price": "150000",
+    "address": "Mumbai",
+    "propertyType": "Villa",
+    "bedrooms": "5",
+    "bathrooms": "5",
+    "area": "1499",
+    "images": [
+      "Untitled design (1).png"
+    ],
+    "furnishing": "Fully Furnished",
+    "petPolicy": "Pets Allowed",
+    "amenities": [
+      "WiFi",
+      "Lift",
+      "Gym",
+      "CCTV",
+      "Private Garden"
+    ],
+    "details": {
+      "address": "Mumbai",
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed",
+      "amenities": [
+        "WiFi",
+        "Lift",
+        "Gym",
+        "CCTV",
+        "Private Garden"
+      ]
+    },
+    "owner": {
+      "id": "686bd7f90caf6af92192057d",
+      "name": "zumi",
+      "email": "zumi@gmail.com",
+      "profileImage": ""
+    },
+    "createdAt": "2025-07-07T14:22:57.628Z",
+    "location": "Mumbai",
+    "type": "Villa",
+    "rating": 0,
+    "reviews": 0
+  },
+  {
+    "id": "1751898280691",
+    "title": "NEW",
+    "description": "detailed address",
+    "price": "15205",
+    "address": "Bhopal",
+    "propertyType": "Apartment",
+    "bedrooms": "1",
+    "bathrooms": "1",
+    "area": "650",
+    "images": [
+      "Untitled design (1).png"
+    ],
+    "furnishing": "Fully Furnished",
+    "petPolicy": "Pets Allowed",
+    "amenities": [
+      "WiFi",
+      "Lift",
+      "24x7 Security",
+      "Parking"
+    ],
+    "details": {
+      "address": "Bhopal",
+      "furnishing": "Fully Furnished",
+      "petPolicy": "Pets Allowed",
+      "amenities": [
+        "WiFi",
+        "Lift",
+        "24x7 Security",
+        "Parking"
+      ]
+    },
+    "owner": {
+      "id": "686bd7f90caf6af92192057d",
+      "name": "zumi",
+      "email": "zumi@gmail.com",
+      "profileImage": ""
+    },
+    "createdAt": "2025-07-07T14:24:40.691Z",
+    "location": "Bhopal",
+    "type": "Apartment",
+    "rating": 0,
+    "reviews": 0
+  }
+]

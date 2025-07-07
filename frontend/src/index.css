@@ -1,254 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  * {
-    @apply border-gray-200;
+/* Custom animations for chat */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  body {
-    @apply bg-gray-50 text-gray-900 font-sans antialiased;
-  }
-
-  html {
-    scroll-behavior: smooth;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@layer components {
-  /* Modern Button Styles */
-  .btn {
-    @apply inline-flex items-center justify-center rounded-lg text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
   }
-  
-  .btn-primary {
-    @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 shadow-sm hover:shadow-md transform hover:-translate-y-0.5;
-  }
-  
-  .btn-secondary {
-    @apply bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-500 shadow-sm hover:shadow-md transform hover:-translate-y-0.5;
-  }
-  
-  .btn-outline {
-    @apply border border-gray-300 bg-transparent text-gray-700 hover:bg-gray-50 focus:ring-gray-500 shadow-sm hover:shadow-md transform hover:-translate-y-0.5;
-  }
-  
-  .btn-ghost {
-    @apply bg-transparent text-gray-600 hover:bg-gray-100 focus:ring-gray-500;
-  }
-  
-  .btn-sm {
-    @apply h-8 px-3 text-xs;
-  }
-  
-  .btn-md {
-    @apply h-10 px-4 py-2;
-  }
-  
-  .btn-lg {
-    @apply h-12 px-6 text-base;
-  }
-  
-  /* Modern Input Styles */
-  .input {
-    @apply w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200;
-  }
-  
-  .textarea {
-    @apply w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none;
-  }
-  
-  .select {
-    @apply w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200;
-  }
-
-  /* Modern Card Styles */
-  .card {
-    @apply rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden;
-  }
-  
-  .card-header {
-    @apply p-6 border-b border-gray-100;
-  }
-  
-  .card-title {
-    @apply text-xl font-semibold text-gray-900;
-  }
-  
-  .card-description {
-    @apply text-sm text-gray-600 mt-1;
-  }
-  
-  .card-content {
-    @apply p-6;
-  }
-  
-  .card-footer {
-    @apply p-6 border-t border-gray-100 bg-gray-50;
-  }
-
-  /* Modern Badge Styles */
-  .badge {
-    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium transition-colors;
-  }
-  
-  .badge-primary {
-    @apply bg-blue-100 text-blue-800;
-  }
-  
-  .badge-secondary {
-    @apply bg-gray-100 text-gray-800;
-  }
-  
-  .badge-success {
-    @apply bg-green-100 text-green-800;
-  }
-  
-  .badge-warning {
-    @apply bg-yellow-100 text-yellow-800;
-  }
-  
-  .badge-error {
-    @apply bg-red-100 text-red-800;
-  }
-
-  /* Modern Navigation Styles */
-  .nav-link {
-    @apply text-gray-600 hover:text-blue-600 transition-colors duration-200 font-medium;
-  }
-  
-  .nav-link-active {
-    @apply text-blue-600 bg-blue-50 border-r-2 border-blue-600;
-  }
-
-  /* Modern Loading Spinner */
-  .spinner {
-    @apply animate-spin rounded-full border-2 border-gray-300 border-t-blue-600;
-  }
-  
-  /* Modern Animations */
-  .fade-in {
-    @apply animate-fade-in;
-  }
-  
-  .slide-up {
-    @apply animate-slide-up;
-  }
-  
-  .scale-in {
-    @apply animate-scale-in;
-  }
-  
-  /* Modern Glass Effect */
-  .glass {
-    @apply bg-white/80 backdrop-blur-sm border border-white/20;
-  }
-  
-  /* Modern Gradient Backgrounds */
-  .gradient-primary {
-    @apply bg-gradient-to-r from-blue-600 to-blue-800;
-  }
-  
-  .gradient-secondary {
-    @apply bg-gradient-to-r from-gray-600 to-gray-800;
-  }
-  
-  /* Modern Shadows */
-  .shadow-soft {
-    @apply shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)];
-  }
-  
-  .shadow-medium {
-    @apply shadow-[0_4px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)];
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-@layer utilities {
-  /* Custom animations */
-  @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  @keyframes slide-up {
-    from { 
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to { 
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes scale-in {
-    from { 
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to { 
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-  
-  .animate-fade-in {
-    animation: fade-in 0.5s ease-out;
-  }
-  
-  .animate-slide-up {
-    animation: slide-up 0.3s ease-out;
-  }
-  
-  .animate-scale-in {
-    animation: scale-in 0.2s ease-out;
-  }
-  
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    @apply bg-gray-100;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    @apply bg-gray-300 rounded-full;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gray-400;
-  }
-  
-  /* Mapbox styles */
-  .mapboxgl-map {
-    @apply rounded-lg overflow-hidden;
-  }
-  
-  /* Signature canvas styles */
-  .signature-canvas {
-    @apply border border-gray-300 rounded-lg;
-  }
-  
-  /* React transition group styles */
-  .fade-enter {
+@keyframes slide-in-left {
+  from {
     opacity: 0;
+    transform: translateX(-20px);
   }
-  
-  .fade-enter-active {
+  to {
     opacity: 1;
-    transition: opacity 200ms ease-in;
+    transform: translateX(0);
   }
-  
-  .fade-exit {
-    opacity: 1;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(34, 197, 94, 0.3);
   }
-  
-  .fade-exit-active {
-    opacity: 0;
-    transition: opacity 200ms ease-in;
+  50% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.3s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Message bubble hover effects */
+.message-bubble {
+  transition: all 0.2s ease-in-out;
+}
+
+.message-bubble:hover {
+  transform: translateY(-1px);
+}
+
+/* Custom scrollbar for chat */
+.chat-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: rgba(34, 197, 94, 0.1);
+  border-radius: 3px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(34, 197, 94, 0.3);
+  border-radius: 3px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 197, 94, 0.5);
+}
+
+/* Typing indicator animation */
+.typing-dot {
+  animation: typing-bounce 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typing-bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
   }
 }

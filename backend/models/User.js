@@ -1,107 +1,39 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    lowercase: true,
-    trim: true
-  },
-  password: {
-    type: String,
-    required: true,
-    minlength: 6
-  },
-  role: {
-    type: String,
-    enum: ['buyer', 'seller', 'admin'],
-    default: 'buyer'
-  },
-  phone: {
-    type: String,
-    required: true
-  },
-  location: {
-    type: {
-      type: String,
-      enum: ['Point'],
-      required: false
-    },
-    coordinates: {
-      type: [Number],
-      required: false
-    },
-    address: String,
-    city: String,
-    state: String,
-    zipCode: String
-  },
-  documents: [{
-    type: {
-      type: String,
-      enum: ['id', 'passport', 'driving_license', 'utility_bill', 'other']
-    },
-    url: String,
-    filename: String,
-    uploadedAt: {
-      type: Date,
-      default: Date.now
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  role: { type: String, enum: ['buyer', 'seller'], default: 'buyer' },
+  profileImage: { type: String },
+  phone: { type: String },
+  address: { type: String },
+  signature: { type: String },
+  settings: {
+    theme: { type: String, default: 'light' },
+    language: { type: String, default: 'en' },
+    notifications: {
+      email: { type: Boolean, default: true },
+      sms: { type: Boolean, default: false }
     }
-  }],
-  profileVerified: {
-    type: Boolean,
-    default: false
   },
-  profileImage: {
-    url: String,
-    publicId: String
-  },
-  isActive: {
-    type: Boolean,
-    default: true
-  },
-  lastLogin: {
-    type: Date,
-    default: Date.now
-  }
-}, {
-  timestamps: true
-});
+}, { timestamps: true });
 
-// Index for geospatial queries
-userSchema.index({ location: '2dsphere' });
-
-// Hash password before saving
-userSchema.pre('save', async function(next) {
+userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
-  
-  try {
-    const salt = await bcrypt.genSalt(12);
-    this.password = await bcrypt.hash(this.password, salt);
-    next();
-  } catch (error) {
-    next(error);
-  }
+  this.password = await bcrypt.hash(this.password, 10);
+  next();
 });
 
-// Method to compare password
-userSchema.methods.comparePassword = async function(candidatePassword) {
+userSchema.methods.comparePassword = function (candidatePassword) {
   return bcrypt.compare(candidatePassword, this.password);
 };
 
-// Method to get public profile (without sensitive data)
-userSchema.methods.getPublicProfile = function() {
-  const userObject = this.toObject();
-  delete userObject.password;
-  delete userObject.documents;
-  return userObject;
+userSchema.methods.generateJWT = function () {
+  const secret = process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-this-in-production';
+  return jwt.sign({ id: this._id, role: this.role }, secret, { expiresIn: '7d' });
 };
 
 module.exports = mongoose.model('User', userSchema); 
